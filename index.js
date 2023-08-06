@@ -6,6 +6,10 @@ mongoose.set('strictQuery', true)
 const app = express()
 require("dotenv").config()
 
+//  Midlewares
+app.use(express.json())
+app.use(cors())
+
 //  Ports and Urls
 const port = process.env.PORT || 8080
 const url = process.env.ATLAS_URL
@@ -14,9 +18,7 @@ const userRouter = require("./routes/userRoute")
 const playlist = require("./routes/playlist")
 const authentication = require("./middleware/authentication")
 
-//  Midlewares
-app.use(express.json())
-app.use(cors())
+
 
 
 app.use("/users",userRouter)
