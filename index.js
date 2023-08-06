@@ -6,6 +6,9 @@ mongoose.set('strictQuery', true)
 const app = express()
 require("dotenv").config()
 
+const bodyParser = require("body-parser"); 
+
+app.use(bodyParser.json());
 //  Midlewares
 app.use(express.json())
 app.use(cors())
