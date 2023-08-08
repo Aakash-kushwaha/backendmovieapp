@@ -27,7 +27,7 @@ app.get("/",(req, res) =>{
     res.send("welcome to homepage")
 })
 app.use("/users",userRouter)
-app.use("/playlist",authentication,playlist)
+app.use("/playlist",playlist)
 
 
 

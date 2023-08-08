@@ -34,7 +34,7 @@ const userRegister = async (req, res) => {
     const token = createToken(user._id);
 
     res.status(200).json({
-      _id: user._id,
+      userId: user._id,
       name,
       email,
       success: true
@@ -63,6 +63,8 @@ const userLogin = async (req, res) => {
     const token = createToken(user._id);
 
     res.status(200).json({
+      userId: user._id,
+      name: user.name,
       token,
       success: true
     });
